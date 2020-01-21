@@ -1,0 +1,170 @@
+h1{
+    color: orange
+}
+.tree{
+    top:300px;
+    left:600px;
+    position: absolute;
+    display: block;
+    width: 150px;
+    height: 150px;
+    background: url(./assets/Layer\ 1.png);
+    background-size: 100%;
+    transition: all 0.2s linear;
+}
+.tree:hover{
+   background-color: blue;
+   transform: scale(4);
+   translate: (100px, 200px);
+   /* animation-name: big;
+   animation-duration: 0.2s;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards; */
+}
+.treebackground{
+    width: 50vw;
+    height: 100vh;
+   background: url(./assets/Layer\ 3.png);
+   background-size: 250%;
+    transition: all 0.5s linear;
+    float: left;
+}
+.treebackground:hover{
+    width: 90vw;
+}
+ .building{
+    top:150px;
+    left:950px;
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 400px;
+    background: url(./assets/Layer\ 2.png);
+    background-size: 101%;
+    background-color: rgb(111, 190, 221);
+    transition: all 0.5s linear;
+    z-index: 10;
+}
+.building:hover{
+    transform: scale(0.25);
+    background-color: rgb(204, 224, 231);
+    /* animation-name: gosmall;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; */
+}
+.buildingbackground{
+    width: 45vw;
+    height: 100vh;
+    float: right;
+    /* display: inline; */
+    background-color: #848484;
+    transition: all 0.5s linear;
+    opacity: 0;
+}
+.buildingbackground:hover{
+    opacity: 1;
+    animation-name: concrete;
+    animation-duration: 1s;
+    /* animation-iteration-count: 1; */
+    animation-fill-mode: forwards;
+    /* width: 50vw;
+    height: 100vh;
+    background-color: cornsilk; */
+}
+@keyframes concrete{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0.6;
+    }
+}
+
+.bubble{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    /*z-index defult value=1*/
+    z-index:0;
+    /*upgrade gpu rendering*/
+    transform:translateZ(0);
+  }
+  
+  .bubble li{
+    position:absolute;
+    list-style:none;
+    display:block;
+    background:rgba(255,255,255);
+    /*make bubble on page bottom*/
+    bottom:-100px; 
+    animation:bubble-ani 20s linear infinite;
+    border-radius:100%;
+  }
+  
+  /* glow of the bubbles*/
+  .bubble li:before {
+      position: absolute;
+      left: 20%;
+      top: 21%;
+      width: 25%;
+      content: '';
+      background: rgba(255,255,255);
+      display: block;
+      height: 25%;
+      border-radius: 100%;
+  }
+  
+  .bubble li:nth-child(1){
+    width:20px;
+    height:20px;
+    left:15%;
+  }
+  
+  .bubble li:nth-child(2){
+    width:40px;
+    height:40px;
+    left:40%;
+    /*在元素裡增加動畫的延遲時間跟速度*/
+    animation-duration:5s;
+    animation-delay:2s;
+  }
+  
+  .bubble li:nth-child(3){
+    width:25px;
+    height:25px;
+    left:30%;
+    /*在元素裡增加動畫的延遲時間跟速度*/
+    animation-duration:18s;
+    animation-delay:3.5s;
+  }
+  
+  .bubble li:nth-child(4){
+    width:60px;
+    height:60px;
+    left:55%;
+    /*在元素裡增加動畫的延遲時間跟速度*/
+    animation-duration:23s;
+    animation-delay:1.5s;
+  }
+  
+  .bubble li:nth-child(5){
+    width:20px;
+    height:20px;
+    left:35%;
+    /*在元素裡增加動畫的延遲時間跟速度*/
+    animation-duration:16s;
+    animation-delay:2s;
+  }
+  @keyframes bubble-ani {
+    0%{
+      -webkit-transform:translateY(0);
+      transform:translateY(0);
+    }
+    100%{
+      -webkit-transform:translateY(-1080px);
+      transform:translateY(-1080px);
+    }
+  }
